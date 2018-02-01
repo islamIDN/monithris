@@ -60,7 +60,7 @@ class LoginVC: UIViewController {
         // save user data persistence using user default
         var userData : [String:Any] = [
             "email" : emailTextField.text!,
-            "hasBeenLoggedIn" : hasBeenLoggedIn
+            "hasBeenLoggedIn" : true
         ]
         
         UserDefaults.standard.set(userData, forKey: "userData")
@@ -68,6 +68,9 @@ class LoginVC: UIViewController {
         
          print("login successfully")
         activityIndicator.stopAnimating()
+        
+        
+        performSegue(withIdentifier: "goToMainMenu", sender: self)
     }
     
 

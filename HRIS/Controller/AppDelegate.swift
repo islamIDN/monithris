@@ -9,7 +9,7 @@
 import UIKit
 
 
-// Superglobal variable for user saved in the user default (email, password, loginStatus etc)
+// Superglobal variable for user, saved in the NS user default (email, password, loginStatus etc)
 var userData : [String: Any]?
 
 @UIApplicationMain
@@ -20,11 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         loginCheck()
-        
-        
-        // show user default location in the debugging area
-        print("user default location : ")
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
         
         return true
     }
@@ -42,19 +37,14 @@ extension AppDelegate {
     
     func loginCheck () {
         
-        guard let user = userData else {
-            goToLoginVC()
-            print("user data in user default info.plist is not available")
-            return
-            
-        }
-        
-        
+        userData = UserDefaults.standard.object(forKey: "userData") as? [String:Any]
+        guard let user = userData else { return }
+      
         if let userHasBeenLoggedIn = user["hasBeenLoggedIn"] as? Bool {
-            if userHasBeenLoggedIn {
-                goToLoginVC()
-            } else {
+            if userHasBeenLoggedIn == true {
                 goToMainMenu()
+            } else {
+                 goToLoginVC()
             }
         }
     }
@@ -63,14 +53,14 @@ extension AppDelegate {
     
     func goToMainMenu () {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainMenu = storyboard.instantiateViewController(withIdentifier: "MainMenu")
+        let mainMenu = storyboard.instantiateViewController(withIdentifier: "MainMenuVC")
         window?.rootViewController = mainMenu
         
     }
     
     func goToLoginVC () {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let login = storyboard.instantiateViewController(withIdentifier: "login")
+        let login = storyboard.instantiateViewController(withIdentifier: "loginVC")
         window?.rootViewController = login
         
     }

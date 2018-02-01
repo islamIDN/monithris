@@ -15,6 +15,11 @@
 		DF80376C2022C9FD0092BA88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF80376A2022C9FD0092BA88 /* LaunchScreen.storyboard */; };
 		DF80377A2022CB090092BA88 /* alertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037792022CB090092BA88 /* alertExtension.swift */; };
 		DF80377D2022F0040092BA88 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF80377C2022F0040092BA88 /* MainMenuVC.swift */; };
+		DF80377F202304700092BA88 /* coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF80377E202304700092BA88 /* coordinate.swift */; };
+		DF803781202304820092BA88 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF803780202304820092BA88 /* user.swift */; };
+		DFFF76F62023107D005B7BCA /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF76F52023107D005B7BCA /* NetworkingService.swift */; };
+		DFFF76F82023110A005B7BCA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF76F72023110A005B7BCA /* Endpoint.swift */; };
+		DFFF76FA20231256005B7BCA /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF76F920231256005B7BCA /* APIResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		DF80376D2022C9FD0092BA88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF8037792022CB090092BA88 /* alertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertExtension.swift; sourceTree = "<group>"; };
 		DF80377C2022F0040092BA88 /* MainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
+		DF80377E202304700092BA88 /* coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coordinate.swift; sourceTree = "<group>"; };
+		DF803780202304820092BA88 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		DFFF76F52023107D005B7BCA /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		DFFF76F72023110A005B7BCA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		DFFF76F920231256005B7BCA /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		F4008E69C87D5E418DF0D5CF /* Pods-HRIS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRIS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRIS/Pods-HRIS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +132,11 @@
 		DF8037772022CA6F0092BA88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DFFF76F52023107D005B7BCA /* NetworkingService.swift */,
+				DFFF76F72023110A005B7BCA /* Endpoint.swift */,
+				DF803780202304820092BA88 /* user.swift */,
+				DF80377E202304700092BA88 /* coordinate.swift */,
+				DFFF76F920231256005B7BCA /* APIResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,10 +288,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFFF76FA20231256005B7BCA /* APIResult.swift in Sources */,
 				DF8037642022C9FD0092BA88 /* LoginVC.swift in Sources */,
 				DF80377A2022CB090092BA88 /* alertExtension.swift in Sources */,
+				DFFF76F82023110A005B7BCA /* Endpoint.swift in Sources */,
+				DF803781202304820092BA88 /* user.swift in Sources */,
 				DF80377D2022F0040092BA88 /* MainMenuVC.swift in Sources */,
 				DF8037622022C9FD0092BA88 /* AppDelegate.swift in Sources */,
+				DFFF76F62023107D005B7BCA /* NetworkingService.swift in Sources */,
+				DF80377F202304700092BA88 /* coordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
