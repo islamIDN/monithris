@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74A9CC80DDC2F2B18BF610E5 /* Pods_HRIS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95DF6A88D23E81163F1DD6B /* Pods_HRIS.framework */; };
 		DF8037622022C9FD0092BA88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037612022C9FD0092BA88 /* AppDelegate.swift */; };
-		DF8037642022C9FD0092BA88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037632022C9FD0092BA88 /* ViewController.swift */; };
+		DF8037642022C9FD0092BA88 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037632022C9FD0092BA88 /* LoginVC.swift */; };
 		DF8037672022C9FD0092BA88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8037652022C9FD0092BA88 /* Main.storyboard */; };
 		DF8037692022C9FD0092BA88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF8037682022C9FD0092BA88 /* Assets.xcassets */; };
 		DF80376C2022C9FD0092BA88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF80376A2022C9FD0092BA88 /* LaunchScreen.storyboard */; };
+		DF80377A2022CB090092BA88 /* alertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037792022CB090092BA88 /* alertExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC9847ED1E9EF5A0F285BACA /* Pods-HRIS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRIS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HRIS/Pods-HRIS.release.xcconfig"; sourceTree = "<group>"; };
+		D95DF6A88D23E81163F1DD6B /* Pods_HRIS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HRIS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF80375E2022C9FD0092BA88 /* HRIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRIS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8037612022C9FD0092BA88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DF8037632022C9FD0092BA88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF8037632022C9FD0092BA88 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DF8037662022C9FD0092BA88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF8037682022C9FD0092BA88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF80376B2022C9FD0092BA88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF80376D2022C9FD0092BA88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF8037792022CB090092BA88 /* alertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertExtension.swift; sourceTree = "<group>"; };
+		F4008E69C87D5E418DF0D5CF /* Pods-HRIS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRIS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRIS/Pods-HRIS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A9CC80DDC2F2B18BF610E5 /* Pods_HRIS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		699AF33F1E1924070A6D4C4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4008E69C87D5E418DF0D5CF /* Pods-HRIS.debug.xcconfig */,
+				CC9847ED1E9EF5A0F285BACA /* Pods-HRIS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AAA075A7FB37EA2E74415F3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D95DF6A88D23E81163F1DD6B /* Pods_HRIS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DF8037552022C9FD0092BA88 = {
 			isa = PBXGroup;
 			children = (
 				DF8037602022C9FD0092BA88 /* HRIS */,
 				DF80375F2022C9FD0092BA88 /* Products */,
+				699AF33F1E1924070A6D4C4B /* Pods */,
+				AAA075A7FB37EA2E74415F3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +80,55 @@
 		DF8037602022C9FD0092BA88 /* HRIS */ = {
 			isa = PBXGroup;
 			children = (
-				DF8037612022C9FD0092BA88 /* AppDelegate.swift */,
-				DF8037632022C9FD0092BA88 /* ViewController.swift */,
-				DF8037652022C9FD0092BA88 /* Main.storyboard */,
+				DF8037742022CA4E0092BA88 /* Controller */,
+				DF8037772022CA6F0092BA88 /* Model */,
+				DF8037732022CA460092BA88 /* View */,
+				DF8037752022CA560092BA88 /* Extension */,
 				DF8037682022C9FD0092BA88 /* Assets.xcassets */,
-				DF80376A2022C9FD0092BA88 /* LaunchScreen.storyboard */,
 				DF80376D2022C9FD0092BA88 /* Info.plist */,
 			);
 			path = HRIS;
+			sourceTree = "<group>";
+		};
+		DF8037732022CA460092BA88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF80376A2022C9FD0092BA88 /* LaunchScreen.storyboard */,
+				DF8037652022C9FD0092BA88 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF8037742022CA4E0092BA88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF8037612022C9FD0092BA88 /* AppDelegate.swift */,
+				DF8037782022CA8E0092BA88 /* Authentication */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF8037752022CA560092BA88 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DF8037792022CB090092BA88 /* alertExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DF8037772022CA6F0092BA88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF8037782022CA8E0092BA88 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DF8037632022C9FD0092BA88 /* LoginVC.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DF8037702022C9FD0092BA88 /* Build configuration list for PBXNativeTarget "HRIS" */;
 			buildPhases = (
+				C6FBFEB49790B21ECC5C0D15 /* [CP] Check Pods Manifest.lock */,
 				DF80375A2022C9FD0092BA88 /* Sources */,
 				DF80375B2022C9FD0092BA88 /* Frameworks */,
 				DF80375C2022C9FD0092BA88 /* Resources */,
+				ECE9FABC17410A0E3F915465 /* [CP] Embed Pods Frameworks */,
+				9BE5CF3E0B9B29EBD0DF098B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +201,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9BE5CF3E0B9B29EBD0DF098B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HRIS/Pods-HRIS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6FBFEB49790B21ECC5C0D15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HRIS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECE9FABC17410A0E3F915465 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HRIS/Pods-HRIS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HRIS/Pods-HRIS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DF80375A2022C9FD0092BA88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF8037642022C9FD0092BA88 /* ViewController.swift in Sources */,
+				DF8037642022C9FD0092BA88 /* LoginVC.swift in Sources */,
+				DF80377A2022CB090092BA88 /* alertExtension.swift in Sources */,
 				DF8037622022C9FD0092BA88 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +399,7 @@
 		};
 		DF8037712022C9FD0092BA88 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4008E69C87D5E418DF0D5CF /* Pods-HRIS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +415,7 @@
 		};
 		DF8037722022C9FD0092BA88 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC9847ED1E9EF5A0F285BACA /* Pods-HRIS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
