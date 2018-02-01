@@ -14,6 +14,7 @@
 		DF8037692022C9FD0092BA88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF8037682022C9FD0092BA88 /* Assets.xcassets */; };
 		DF80376C2022C9FD0092BA88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF80376A2022C9FD0092BA88 /* LaunchScreen.storyboard */; };
 		DF80377A2022CB090092BA88 /* alertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037792022CB090092BA88 /* alertExtension.swift */; };
+		DF80377D2022F0040092BA88 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF80377C2022F0040092BA88 /* MainMenuVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		DF80376B2022C9FD0092BA88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF80376D2022C9FD0092BA88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF8037792022CB090092BA88 /* alertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertExtension.swift; sourceTree = "<group>"; };
+		DF80377C2022F0040092BA88 /* MainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		F4008E69C87D5E418DF0D5CF /* Pods-HRIS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRIS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRIS/Pods-HRIS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +82,8 @@
 		DF8037602022C9FD0092BA88 /* HRIS */ = {
 			isa = PBXGroup;
 			children = (
-				DF8037742022CA4E0092BA88 /* Controller */,
 				DF8037772022CA6F0092BA88 /* Model */,
+				DF8037742022CA4E0092BA88 /* Controller */,
 				DF8037732022CA460092BA88 /* View */,
 				DF8037752022CA560092BA88 /* Extension */,
 				DF8037682022C9FD0092BA88 /* Assets.xcassets */,
@@ -104,6 +106,7 @@
 			children = (
 				DF8037612022C9FD0092BA88 /* AppDelegate.swift */,
 				DF8037782022CA8E0092BA88 /* Authentication */,
+				DF80377B2022EFDC0092BA88 /* Main Menu */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -129,6 +132,14 @@
 				DF8037632022C9FD0092BA88 /* LoginVC.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		DF80377B2022EFDC0092BA88 /* Main Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DF80377C2022F0040092BA88 /* MainMenuVC.swift */,
+			);
+			path = "Main Menu";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 			files = (
 				DF8037642022C9FD0092BA88 /* LoginVC.swift in Sources */,
 				DF80377A2022CB090092BA88 /* alertExtension.swift in Sources */,
+				DF80377D2022F0040092BA88 /* MainMenuVC.swift in Sources */,
 				DF8037622022C9FD0092BA88 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
