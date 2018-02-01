@@ -93,8 +93,8 @@
 		DF8037732022CA460092BA88 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DF80376A2022C9FD0092BA88 /* LaunchScreen.storyboard */,
 				DF8037652022C9FD0092BA88 /* Main.storyboard */,
+				DF80376A2022C9FD0092BA88 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -406,7 +406,7 @@
 				DEVELOPMENT_TEAM = 66G43JW698;
 				INFOPLIST_FILE = HRIS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pakubuwono6.HRIS;
+				PRODUCT_BUNDLE_IDENTIFIER = id.monstera.HRIS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -422,7 +422,7 @@
 				DEVELOPMENT_TEAM = 66G43JW698;
 				INFOPLIST_FILE = HRIS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pakubuwono6.HRIS;
+				PRODUCT_BUNDLE_IDENTIFIER = id.monstera.HRIS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
