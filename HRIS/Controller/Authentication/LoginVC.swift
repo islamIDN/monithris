@@ -12,13 +12,14 @@ import UIKit
 class LoginVC: UIViewController {
     
     
-    @IBOutlet weak var emailTextField: UITextField!
+
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var userEmail : String?
-    var userPassword : String?
+    var usernameOfUser : String?
+    var registrationID : String?
     var hasBeenLoggedIn = false
     
     
@@ -39,14 +40,6 @@ class LoginVC: UIViewController {
     @IBAction func loginButtonDidPressed(_ sender: Any) {
         
         
-        // email shall be in the correct format
-        guard ((emailTextField.text?.contains("@"))!) else {
-            showAlert(alertTitle: "Sorry", alertMessage: "Your email should be in the correct format", actionTitle: "Back")
-            return
-        }
-       
-        
-        
         // send data to the server
         let loginEndPoint = EndPoint.login(loginUser: "sasas", password: "asasasa", registrationID: "assasa")
         NetworkingService.fetchJSONData(endPoint: loginEndPoint) { (result) in
@@ -62,9 +55,9 @@ class LoginVC: UIViewController {
                 
                 // save user data persistence using user default
                 var userData : [String:Any] = [
-                    "email" : self.emailTextField.text!,
-                    "password" : self.passwordTextField.text!,
-                    "hasBeenLoggedIn" : true
+                    "username" : self.usernameTextField.text!,
+                    "hasBeenLoggedIn" : true,
+                    "registrationID" : self.registrationID!
                 ]
                 
                 UserDefaults.standard.set(userData, forKey: "userData")
@@ -77,11 +70,9 @@ class LoginVC: UIViewController {
             self.activityIndicator.stopAnimating()
         }
         
-        
-        
     }
     
-
+ 
     
 
 }
@@ -96,10 +87,9 @@ extension LoginVC {
         userData = UserDefaults.standard.object(forKey: "userData") as? [String:Any]
         
         if let userInformation = userData {
-            userEmail = userInformation["email"] as? String
+            usernameOfUser = userInformation["username"] as? String
             hasBeenLoggedIn = userInformation["hasBeenLoggedIn"] as! Bool
-            userPassword = userInformation["password"] as? String
-            
+            registrationID = userInformation["registrationID"] as? String
         } else {
             print("user data in User Default is not available i.e user first time login")
         }
@@ -108,25 +98,20 @@ extension LoginVC {
     
     
     func fillTextField() {
-        guard let emailUser = userEmail else {return}
-        guard let passwordUser = userPassword else {return}
+        guard let username = usernameOfUser else {return}
+        usernameTextField.text = username
         
-        // fill email textfield only if it has the correct format
-        if emailUser.contains("@") {
-            emailTextField.text = emailUser
-        }
-        
-        passwordTextField.text = passwordUser
+        // password textfield will be filled manually by the user
     }
     
     func addFunctionalityToTextField() {
         
         // Assign Delegate
-        emailTextField.delegate = self
+        usernameTextField.delegate = self
         passwordTextField.delegate = self
         
         // add target selector, in order to make loginButton enable when all text field is filled out
-        emailTextField.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
+        usernameTextField.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
         
     }
@@ -152,7 +137,7 @@ extension LoginVC  : UITextFieldDelegate {
         }
         
         guard
-            let email = emailTextField.text, !email.isEmpty,
+            let username = usernameTextField.text, !username.isEmpty,
             let password = passwordTextField.text, !password.isEmpty
             else {
                 loginButton.alpha = 0.4
@@ -171,7 +156,7 @@ extension LoginVC  : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // to move the cursor in the next textField after we pressed 'enter' in the keyboard
         
-        if textField == emailTextField {
+        if textField == usernameTextField {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
            passwordTextField.resignFirstResponder()

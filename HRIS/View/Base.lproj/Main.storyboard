@@ -40,7 +40,7 @@
                                 <color key="textColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-gR-Qth" customClass="DesignableTextField" customModule="HRIS">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-gR-Qth" userLabel="Username Text Field" customClass="DesignableTextField" customModule="HRIS">
                                 <rect key="frame" x="16" y="274" width="343" height="17"/>
                                 <color key="textColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -143,9 +143,9 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="A9F-Os-Ax0" id="9dV-rN-br5"/>
-                        <outlet property="emailTextField" destination="K7S-gR-Qth" id="Eic-Z1-1qa"/>
                         <outlet property="loginButton" destination="5A8-pU-LgU" id="zwu-zv-en2"/>
                         <outlet property="passwordTextField" destination="q3P-g2-wm3" id="kPD-XI-Squ"/>
+                        <outlet property="usernameTextField" destination="K7S-gR-Qth" id="vfw-lZ-uwk"/>
                         <segue destination="2DU-hy-IK4" kind="show" identifier="goToMainMenu" id="Tlx-g7-ESn"/>
                     </connections>
                 </viewController>

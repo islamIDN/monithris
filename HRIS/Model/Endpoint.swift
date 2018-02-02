@@ -18,14 +18,20 @@ enum EndPoint {
   
     
     var baseURL : String {
-        return "http://app10.pakubuwono6.com"
+        
+        switch self {
+        case .login : return "http://192.168.1.37"
+        case .uploadImage : return "http://app10.pakubuwono6.com"
+        case .checkin : return "http://app10.pakubuwono6.com"
+        }
+        
     }
     
     
     
     var path : String {
         switch self {
-        case .login : return "/hris/index.php/RestAttendance/Login"
+        case .login : return "/TeraHr/index.php/RestAttendance/Login"
         case .uploadImage : return "/hris/index.php/RestAttendance/UploadImage"
         case .checkin : return "/hris/index.php/RestAttendance/CheckIn"
         }
