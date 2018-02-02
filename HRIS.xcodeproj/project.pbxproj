@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		74A9CC80DDC2F2B18BF610E5 /* Pods_HRIS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95DF6A88D23E81163F1DD6B /* Pods_HRIS.framework */; };
+		DF0027202023F6EF00743715 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00271F2023F6EF00743715 /* DesignableTextField.swift */; };
+		DF0027222023FDF300743715 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0027212023FDF300743715 /* DesignableButton.swift */; };
 		DF8037622022C9FD0092BA88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037612022C9FD0092BA88 /* AppDelegate.swift */; };
 		DF8037642022C9FD0092BA88 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037632022C9FD0092BA88 /* LoginVC.swift */; };
 		DF8037672022C9FD0092BA88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8037652022C9FD0092BA88 /* Main.storyboard */; };
@@ -15,16 +17,19 @@
 		DF80376C2022C9FD0092BA88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF80376A2022C9FD0092BA88 /* LaunchScreen.storyboard */; };
 		DF80377A2022CB090092BA88 /* alertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037792022CB090092BA88 /* alertExtension.swift */; };
 		DF80377D2022F0040092BA88 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF80377C2022F0040092BA88 /* MainMenuVC.swift */; };
-		DF80377F202304700092BA88 /* coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF80377E202304700092BA88 /* coordinate.swift */; };
-		DF803781202304820092BA88 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF803780202304820092BA88 /* user.swift */; };
+		DF80377F202304700092BA88 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF80377E202304700092BA88 /* Coordinate.swift */; };
+		DF803781202304820092BA88 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF803780202304820092BA88 /* User.swift */; };
 		DFFF76F62023107D005B7BCA /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF76F52023107D005B7BCA /* NetworkingService.swift */; };
 		DFFF76F82023110A005B7BCA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF76F72023110A005B7BCA /* Endpoint.swift */; };
 		DFFF76FA20231256005B7BCA /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF76F920231256005B7BCA /* APIResult.swift */; };
+		DFFF76FC20231808005B7BCA /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF76FB20231808005B7BCA /* CheckIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC9847ED1E9EF5A0F285BACA /* Pods-HRIS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRIS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HRIS/Pods-HRIS.release.xcconfig"; sourceTree = "<group>"; };
 		D95DF6A88D23E81163F1DD6B /* Pods_HRIS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HRIS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF00271F2023F6EF00743715 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		DF0027212023FDF300743715 /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		DF80375E2022C9FD0092BA88 /* HRIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRIS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8037612022C9FD0092BA88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF8037632022C9FD0092BA88 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -34,11 +39,12 @@
 		DF80376D2022C9FD0092BA88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF8037792022CB090092BA88 /* alertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertExtension.swift; sourceTree = "<group>"; };
 		DF80377C2022F0040092BA88 /* MainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
-		DF80377E202304700092BA88 /* coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coordinate.swift; sourceTree = "<group>"; };
-		DF803780202304820092BA88 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		DF80377E202304700092BA88 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		DF803780202304820092BA88 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DFFF76F52023107D005B7BCA /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		DFFF76F72023110A005B7BCA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		DFFF76F920231256005B7BCA /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		DFFF76FB20231808005B7BCA /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
 		F4008E69C87D5E418DF0D5CF /* Pods-HRIS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRIS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRIS/Pods-HRIS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +130,8 @@
 		DF8037752022CA560092BA88 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				DF00271F2023F6EF00743715 /* DesignableTextField.swift */,
+				DF0027212023FDF300743715 /* DesignableButton.swift */,
 				DF8037792022CB090092BA88 /* alertExtension.swift */,
 			);
 			path = Extension;
@@ -134,9 +142,10 @@
 			children = (
 				DFFF76F52023107D005B7BCA /* NetworkingService.swift */,
 				DFFF76F72023110A005B7BCA /* Endpoint.swift */,
-				DF803780202304820092BA88 /* user.swift */,
-				DF80377E202304700092BA88 /* coordinate.swift */,
 				DFFF76F920231256005B7BCA /* APIResult.swift */,
+				DF803780202304820092BA88 /* User.swift */,
+				DFFF76FB20231808005B7BCA /* CheckIn.swift */,
+				DF80377E202304700092BA88 /* Coordinate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,14 +298,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFFF76FA20231256005B7BCA /* APIResult.swift in Sources */,
+				DFFF76FC20231808005B7BCA /* CheckIn.swift in Sources */,
 				DF8037642022C9FD0092BA88 /* LoginVC.swift in Sources */,
 				DF80377A2022CB090092BA88 /* alertExtension.swift in Sources */,
+				DF0027202023F6EF00743715 /* DesignableTextField.swift in Sources */,
 				DFFF76F82023110A005B7BCA /* Endpoint.swift in Sources */,
-				DF803781202304820092BA88 /* user.swift in Sources */,
+				DF803781202304820092BA88 /* User.swift in Sources */,
 				DF80377D2022F0040092BA88 /* MainMenuVC.swift in Sources */,
 				DF8037622022C9FD0092BA88 /* AppDelegate.swift in Sources */,
 				DFFF76F62023107D005B7BCA /* NetworkingService.swift in Sources */,
-				DF80377F202304700092BA88 /* coordinate.swift in Sources */,
+				DF80377F202304700092BA88 /* Coordinate.swift in Sources */,
+				DF0027222023FDF300743715 /* DesignableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +450,7 @@
 				DEVELOPMENT_TEAM = 66G43JW698;
 				INFOPLIST_FILE = HRIS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = id.monstera.HRIS;
+				PRODUCT_BUNDLE_IDENTIFIER = id.monstera.PakuHRIS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,7 +466,7 @@
 				DEVELOPMENT_TEAM = 66G43JW698;
 				INFOPLIST_FILE = HRIS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = id.monstera.HRIS;
+				PRODUCT_BUNDLE_IDENTIFIER = id.monstera.PakuHRIS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

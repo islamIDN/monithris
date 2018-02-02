@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class LoginVC: UIViewController {
     
     
@@ -17,9 +18,9 @@ class LoginVC: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var userEmail : String?
+    var userPassword : String?
     var hasBeenLoggedIn = false
     
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class LoginVC: UIViewController {
         loginButton.layer.cornerRadius = 5
         
         getUserData()
-        fillEmailTextField()
+        fillTextField()
         
     }
     
@@ -54,26 +55,48 @@ class LoginVC: UIViewController {
         }
        
         
-        activityIndicator.startAnimating()
+        
+        // send data to the server
+        let loginEndPoint = EndPoint.login(loginUser: "sasas", password: "asasasa", registrationID: "assasa")
+        NetworkingService.fetchJSONData(endPoint: loginEndPoint) { (result) in
+            
+            self.activityIndicator.startAnimating()
+            
+            switch result {
+            case .failure(let error) : self.showAlert(alertTitle: "Sorry", alertMessage: error.localizedDescription, actionTitle: "Back")
+            case .success :
+                // if the user has been logged in successfully, then execute the following codes
+                
+                print("login successfully")
+                
+                // save user data persistence using user default
+                var userData : [String:Any] = [
+                    "email" : self.emailTextField.text!,
+                    "password" : self.passwordTextField.text!,
+                    "hasBeenLoggedIn" : true
+                ]
+                
+                UserDefaults.standard.set(userData, forKey: "userData")
+                userData = UserDefaults.standard.object(forKey: "userData") as! [String:Any]
+                
+                self.performSegue(withIdentifier: "goToMainMenu", sender: self)
+                
+            }
+            
+            self.activityIndicator.stopAnimating()
+        }
         
         
-        // save user data persistence using user default
-        var userData : [String:Any] = [
-            "email" : emailTextField.text!,
-            "hasBeenLoggedIn" : true
-        ]
         
-        UserDefaults.standard.set(userData, forKey: "userData")
-        userData = UserDefaults.standard.object(forKey: "userData") as! [String:Any]
-        
-         print("login successfully")
-        activityIndicator.stopAnimating()
-        
-        
-        performSegue(withIdentifier: "goToMainMenu", sender: self)
     }
     
 
+    
+    
+    
+    
+    
+    
 
 }
 
@@ -89,6 +112,8 @@ extension LoginVC {
         if let userInformation = userData {
             userEmail = userInformation["email"] as? String
             hasBeenLoggedIn = userInformation["hasBeenLoggedIn"] as! Bool
+            userPassword = userInformation["password"] as? String
+            
         } else {
             print("user data in User Default is not available i.e user first time login")
         }
@@ -96,13 +121,16 @@ extension LoginVC {
     }
     
     
-    func fillEmailTextField() {
+    func fillTextField() {
         guard let emailUser = userEmail else {return}
+        guard let passwordUser = userPassword else {return}
         
-        // fill email textfield only if in the correct format
+        // fill email textfield only if it has the correct format
         if emailUser.contains("@") {
             emailTextField.text = emailUser
         }
+        
+        passwordTextField.text = passwordUser
     }
     
     

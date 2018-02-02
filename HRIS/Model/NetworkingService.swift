@@ -61,14 +61,10 @@ struct NetworkingService {
     }
     
     
-    static func uploadAvatar (image: UIImage, endPoint: EndPoint, completion : @escaping (APIResult<Any>) -> Void ) {
-        
-        
+    static func uploadImage (image: UIImage, endPoint: EndPoint, completion : @escaping (APIResult<Any>) -> Void ) {
         
         let urlString = "\(endPoint.baseURL)\(endPoint.path)"
-        
-        let imgData = UIImageJPEGRepresentation(image, 0.5)!
-        
+        let imgData = UIImageJPEGRepresentation(image, 0.7)!
         let url = try! URLRequest(url: URL(string: urlString)!, method: .post, headers: nil)
         
         

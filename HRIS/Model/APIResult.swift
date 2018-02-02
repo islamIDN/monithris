@@ -9,6 +9,6 @@
 import Foundation
 
 enum APIResult<T> {
-    case success(T)  // to store various data type
+    case success(T)  
     case failure(Error)
 }

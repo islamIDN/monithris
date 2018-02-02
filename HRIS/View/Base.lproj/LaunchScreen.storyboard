@@ -18,18 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leaf" translatesAutoresizingMaskIntoConstraints="NO" id="AEQ-1z-OhS">
-                                <rect key="frame" x="130" y="257" width="115" height="152"/>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leaf" translatesAutoresizingMaskIntoConstraints="NO" id="AEQ-1z-OhS">
+                                <rect key="frame" x="142.5" y="288.5" width="90" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="152" id="PyT-qB-BQb"/>
-                                    <constraint firstAttribute="width" constant="115" id="Ubg-5N-QPC"/>
+                                    <constraint firstAttribute="width" constant="90" id="mfE-MB-KTa"/>
+                                    <constraint firstAttribute="height" constant="90" id="sTK-wg-2yu"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="AEQ-1z-OhS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="neF-r6-m4a"/>
-                            <constraint firstItem="AEQ-1z-OhS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rYM-Xq-lQg"/>
+                            <constraint firstItem="AEQ-1z-OhS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="K5R-on-6OM"/>
+                            <constraint firstItem="AEQ-1z-OhS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eyt-Bm-LgT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
