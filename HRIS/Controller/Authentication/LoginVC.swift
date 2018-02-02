@@ -25,21 +25,12 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Assign Delegate
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        
-        // login Button is initially disabled
+        // Initial Value for LoginVC
         loginButton.alpha = 0.4
         loginButton.isEnabled = false
         
-        // add target selector, in order to make loginButton enable when all text field is filled out
-        emailTextField.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
-        
-        // update UI Display
-        loginButton.layer.cornerRadius = 5
-        
+       
+        addFunctionalityToTextField()
         getUserData()
         fillTextField()
         
@@ -131,6 +122,18 @@ extension LoginVC {
         }
         
         passwordTextField.text = passwordUser
+    }
+    
+    func addFunctionalityToTextField() {
+        
+        // Assign Delegate
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        // add target selector, in order to make loginButton enable when all text field is filled out
+        emailTextField.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
+        
     }
     
     
