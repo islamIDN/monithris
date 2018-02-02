@@ -13,16 +13,13 @@ import Foundation
 
 enum EndPoint {
     case login(loginUser: String, password: String, registrationID: String)
-    case uploadImage
-    case checkin(userID: String, notes: String, latitude: String, longitude: String, location: String, time:String, url:String,status: String)
-  
+   
     
     var baseURL : String {
         
         switch self {
         case .login : return "http://192.168.1.37"
-        case .uploadImage : return "http://app10.pakubuwono6.com"
-        case .checkin : return "http://app10.pakubuwono6.com"
+      
         }
         
     }
@@ -32,8 +29,6 @@ enum EndPoint {
     var path : String {
         switch self {
         case .login : return "/TeraHr/index.php/RestAttendance/Login"
-        case .uploadImage : return "/hris/index.php/RestAttendance/UploadImage"
-        case .checkin : return "/hris/index.php/RestAttendance/CheckIn"
         }
     }
     
@@ -54,83 +49,45 @@ enum EndPoint {
     }
     
     private struct DefaultValues {
-        static let key = "@PakuAttendance20171207@"
-        static let month = 1
+        static let key = "%40PakuAttendance20171207%40"
+        static let date = 1
     }
     
     
     
-    var parameters : [String:Any] {
+    var requestBody : String {
         
         switch self {
-            
         case .login(let loginUser, let password, let registrationID) :
-            let parameters : [String:Any] = [
-                ParameterKeys.loginUser : loginUser,
-                ParameterKeys.password : password,
-                ParameterKeys.registrationId : registrationID,
-                ParameterKeys.key : DefaultValues.key
-            ]
-            return parameters
-            
-            
-        case .uploadImage :
-            let parameters : [String:Any] = [
-                ParameterKeys.key : DefaultValues.key
-            ]
-            return parameters
-            
-      
-        case .checkin(let userID, let notes, let latitude, let longitude, let location, let time, let url, let status):
-            let parameters : [String:Any] = [
-                ParameterKeys.userID : userID,
-                ParameterKeys.notes : notes,
-                ParameterKeys.latitude : latitude,
-                ParameterKeys.longitude : longitude,
-                ParameterKeys.location : location,
-                ParameterKeys.time : time,
-                ParameterKeys.url : url,
-                ParameterKeys.status : status,
-                ParameterKeys.key : DefaultValues.key
-            ]
-            return parameters
-            
-     
+            return "loginUser=\(loginUser)&password=\(password)&registrationid=\(registrationID)&key=\(DefaultValues.key)"
         }
     }
     
-    
-    
-    
-    
-    private var queryComponents : [URLQueryItem] {
-        // to let swift handle url encoding like %20 for space
-        
-        var components = [URLQueryItem]()
-        
-        for (key, value) in parameters {
-            let queryItem = URLQueryItem(name: key, value: "\(value)")
-            components.append(queryItem)
+    var requestMethod : String {
+        switch self {
+        case .login : return "POST"
         }
-        
-        return components
     }
-    
     
     
     
     
     var request : URLRequest {
         
-        var component = URLComponents(string: baseURL)!
-        component.path = path
-        component.queryItems = queryComponents
+        switch self {
+       
+        case .login :
+            let url = URL(string: "\(baseURL)\(path)")
+            
+            var request = URLRequest(url: url!)
+            request.httpMethod = requestMethod
+            
+            let body = requestBody
+            request.httpBody = body.data(using: .utf8)
+            
+            return request
+        }
         
-        let url = component.url!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        return request
         
     }
     

@@ -40,19 +40,39 @@ class LoginVC: UIViewController {
     @IBAction func loginButtonDidPressed(_ sender: Any) {
         
         
+        let dummyRegID = "123"
+        
+        self.activityIndicator.startAnimating()
+        
         // send data to the server
-        let loginEndPoint = EndPoint.login(loginUser: "sasas", password: "asasasa", registrationID: "assasa")
+        let loginEndPoint = EndPoint.login(loginUser: usernameTextField.text!, password: passwordTextField.text!, registrationID: dummyRegID)
         NetworkingService.fetchJSONData(endPoint: loginEndPoint) { (result) in
             
-            self.activityIndicator.startAnimating()
+            
             
             switch result {
-            case .failure(let error) : self.showAlert(alertTitle: "Sorry", alertMessage: error.localizedDescription, actionTitle: "Back")
-            case .success :
-                // if the user has been logged in successfully, then execute the following codes
+            case .failure(let error) :
+                self.activityIndicator.stopAnimating()
+                self.showAlert(alertTitle: "Sorry", alertMessage: error.localizedDescription, actionTitle: "Back")
+            case .success(let result) :
                 
-                print("login successfully")
+                // the result from the server can be user data (dictionary) if login is successful or just a message from the server (string)
+                print("j")
+
+                guard let dataOfUser = result as? [String:Any] else {
+                    print("k")
+
+                    guard let messageFromServer = result as? String else {return}
+                    print("l")
+                    self.activityIndicator.stopAnimating()
+                    self.showAlert(alertTitle: "Sorry", alertMessage: messageFromServer, actionTitle: "Back")
+                    return
+                }
                 
+                print(dataOfUser)
+                
+                
+                /*
                 // save user data persistence using user default
                 var userData : [String:Any] = [
                     "username" : self.usernameTextField.text!,
@@ -62,12 +82,14 @@ class LoginVC: UIViewController {
                 
                 UserDefaults.standard.set(userData, forKey: "userData")
                 userData = UserDefaults.standard.object(forKey: "userData") as! [String:Any]
-                
+                */
+ 
+ 
+                self.activityIndicator.stopAnimating()
                 self.performSegue(withIdentifier: "goToMainMenu", sender: self)
                 
             }
             
-            self.activityIndicator.stopAnimating()
         }
         
     }

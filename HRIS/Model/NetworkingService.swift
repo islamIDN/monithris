@@ -25,13 +25,16 @@ struct NetworkingService {
                 return
             }
             
-            guard let postJSON = JSON["posts"] as? [[String:Any]] else {
-                print("the user has no post")
-                return
-                
+            guard let validity = JSON["valid"] as? Int else {return}
+           
+            if validity == 1 {
+                guard let userData = JSON["data"] as? [String:Any] else {return}
+                completion(.success(userData))
+            } else if validity == 0 {
+                guard let errorMessageFromServer = JSON["message"] as? String else {return}
+                completion(.success(errorMessageFromServer))
             }
             
-            completion(.success(postJSON))
         }
         
     }
@@ -61,7 +64,9 @@ struct NetworkingService {
     }
     
     
-    static func uploadImage (image: UIImage, endPoint: EndPoint, completion : @escaping (APIResult<Any>) -> Void ) {
+    
+    
+    static func uploadImage (parameters: [String:Any], image: UIImage, endPoint: EndPoint, completion : @escaping (APIResult<Any>) -> Void ) {
         
         let urlString = "\(endPoint.baseURL)\(endPoint.path)"
         let imgData = UIImageJPEGRepresentation(image, 0.7)!
@@ -72,7 +77,7 @@ struct NetworkingService {
             multipartFormData: { multipartFormData in
                 multipartFormData.append(imgData, withName: "file", fileName: "avatar.jpeg", mimeType: "image/jpeg")
                 
-                for (key, value) in endPoint.parameters {
+                for (key, value) in parameters {
                     multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
                 }
         },
