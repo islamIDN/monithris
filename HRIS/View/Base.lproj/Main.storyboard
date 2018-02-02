@@ -53,6 +53,9 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusOfField">
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3P-g2-wm3" customClass="DesignableTextField" customModule="HRIS">
@@ -67,6 +70,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusOfField">
                                         <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
