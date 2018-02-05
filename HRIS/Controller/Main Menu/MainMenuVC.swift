@@ -27,8 +27,6 @@ class MainMenuVC: UIViewController {
         
         checkEmployeeData()
         getDateTimeFromServer()
-        updateUI()
-        activateTimer()
     }
     
     
@@ -87,6 +85,9 @@ extension MainMenuVC {
     func updateUI() {
         guard let timeString = time,
             let dateString = date else { return }
+        
+        print("timeString \(timeString)")
+        print("dateString \(dateString)")
         
         timeLabel.text = timeString
         dateLabel.text = dateString
@@ -150,6 +151,9 @@ extension MainMenuVC {
                 let dateTimeString = self.parsingDateTime(from: stringDateTimeServer)
                 self.time = dateTimeString.timeOnly
                 self.date = dateTimeString.dateOnly
+                
+                self.updateUI()
+                self.activateTimer()
                 
                 self.activityIndicator.stopAnimating()
             }
