@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // to make status bar in the light mode (in info.plist has to be set 'View controller-based status bar appearance' to NO)
         UIApplication.shared.statusBarStyle = .lightContent
         
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
         
         return true
     }

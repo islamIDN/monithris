@@ -35,7 +35,7 @@ struct Employee {
         level = dictionary["Level"] as! String
         superior = dictionary["Superior"] as! Int
         company = dictionary["Company"] as! String
- 
+        imagePath = dictionary["Url"] as? String
     }
    
 }

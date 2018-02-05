@@ -85,10 +85,7 @@ extension MainMenuVC {
     func updateUI() {
         guard let timeString = time,
             let dateString = date else { return }
-        
-        print("timeString \(timeString)")
-        print("dateString \(dateString)")
-        
+       
         timeLabel.text = timeString
         dateLabel.text = dateString
     }
@@ -188,20 +185,15 @@ extension MainMenuVC {
                     let json = jsonFromServer as! JSON
                     let validity = json["valid"].intValue
                     
-                    
                     if validity == 0 {
                         guard let messageFromServer = json["message"].string else {return}
                         self.activityIndicator.stopAnimating()
                         self.showAlert(alertTitle: "Sorry", alertMessage: messageFromServer, actionTitle: "Back")
                     } else {
                         
-                        guard let dataOfuser = json["data"].dictionaryObject else {return}
-                        
-                        // create Employee Object
-                        employee = Employee(dictionary: dataOfuser)
-                       
+                        guard let dataOfTheUser = json["data"].dictionaryObject else {return}
+                        employee = Employee(dictionary: dataOfTheUser)
                         self.activityIndicator.stopAnimating()
-                       
                     }
                     
                 }
