@@ -8,36 +8,26 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 
 struct NetworkingService {
     
-     // this struct job is to get JSON data / raw data from the given endpoint.
     
     static func fetchJSONData (endPoint: EndPoint, completion : @escaping (APIResult<Any>) -> Void ) {
         
         Alamofire.request(endPoint.request).responseJSON { (response) in
             
-            guard let JSON = response.result.value as? [String:Any]  else {
-                if let error = response.result.error {
-                    completion(.failure(error))
-                }
-                return
-            }
             
-            guard let validity = JSON["valid"] as? Int else {return}
-           
-            if validity == 1 {
-                guard let userData = JSON["data"] as? [String:Any] else {return}
-                completion(.success(userData))
-            } else if validity == 0 {
-                guard let errorMessageFromServer = JSON["message"] as? String else {return}
-                completion(.success(errorMessageFromServer))
+            switch response.result {
+            case .failure(let error) : completion(.failure(error))
+            case .success(let value) :
+                let json = JSON(value)
+                completion(.success(json))
             }
-            
         }
-        
     }
+    
     
     
     static func fetchData(url: URL, completion: @escaping (APIResult<Data>) -> Void) {

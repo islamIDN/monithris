@@ -13,13 +13,14 @@ import Foundation
 
 enum EndPoint {
     case login(loginUser: String, password: String, registrationID: String)
+    case timeServer
    
     
     var baseURL : String {
         
         switch self {
         case .login : return "http://192.168.1.37"
-      
+        case .timeServer : return "http://app10.pakubuwono6.com"
         }
         
     }
@@ -29,6 +30,7 @@ enum EndPoint {
     var path : String {
         switch self {
         case .login : return "/TeraHr/index.php/RestAttendance/Login"
+        case .timeServer : return "/hris/index.php/RestAttendance/timeserver"
         }
     }
     
@@ -59,13 +61,20 @@ enum EndPoint {
         
         switch self {
         case .login(let loginUser, let password, let registrationID) :
-            return "loginUser=\(loginUser)&password=\(password)&registrationid=\(registrationID)&key=\(DefaultValues.key)"
+            return "\(ParameterKeys.loginUser)=\(loginUser)&\(ParameterKeys.password)=\(password)&\(ParameterKeys.registrationId)=\(registrationID)&\(ParameterKeys.key)=\(DefaultValues.key)"
+            
+            
+            
+        case .timeServer :
+            return "\(ParameterKeys.key)=\(DefaultValues.key)"
         }
+        
+        
     }
     
     var requestMethod : String {
         switch self {
-        case .login : return "POST"
+        case .login, .timeServer : return "POST"
         }
     }
     
@@ -73,21 +82,16 @@ enum EndPoint {
     
     
     var request : URLRequest {
-        
-        switch self {
-       
-        case .login :
-            let url = URL(string: "\(baseURL)\(path)")
+   
+        let url = URL(string: "\(baseURL)\(path)")
             
-            var request = URLRequest(url: url!)
-            request.httpMethod = requestMethod
+        var request = URLRequest(url: url!)
+        request.httpMethod = requestMethod
             
-            let body = requestBody
-            request.httpBody = body.data(using: .utf8)
+        let body = requestBody
+        request.httpBody = body.data(using: .utf8)
             
-            return request
-        }
-        
+        return request
         
     }
     

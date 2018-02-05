@@ -9,8 +9,9 @@
 import UIKit
 
 
-// Superglobal variable for user, saved in the NS user default (email, password, loginStatus etc)
+// Superglobal variable for user, saved using NSUserDefault (username, password, loginStatus, registrationID)
 var userData : [String: Any]?
+var employee : Employee?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         loginCheck()
+        
+        // to make status bar in the light mode (in info.plist has to be set 'View controller-based status bar appearance' to NO)
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
         
         return true
     }
@@ -37,11 +43,18 @@ extension AppDelegate {
     
     func loginCheck () {
         
+        // retrieve user data from NSUserDefault
         userData = UserDefaults.standard.object(forKey: "userData") as? [String:Any]
-        guard let user = userData else { return }
+        
+        guard let user = userData else {
+            // if NSUserDefault is not available then go to LoginVC
+            goToLoginVC()
+            return
+        }
+        
       
         if let userHasBeenLoggedIn = user["hasBeenLoggedIn"] as? Bool {
-            if userHasBeenLoggedIn == true {
+            if userHasBeenLoggedIn {
                 goToMainMenu()
             } else {
                  goToLoginVC()
@@ -53,8 +66,8 @@ extension AppDelegate {
     
     func goToMainMenu () {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainMenu = storyboard.instantiateViewController(withIdentifier: "MainMenuVC")
-        window?.rootViewController = mainMenu
+        let NavigationBarVC = storyboard.instantiateViewController(withIdentifier: "NavigationBarVC")
+        window?.rootViewController = NavigationBarVC
         
     }
     

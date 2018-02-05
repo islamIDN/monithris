@@ -10,6 +10,8 @@
 		74A9CC80DDC2F2B18BF610E5 /* Pods_HRIS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95DF6A88D23E81163F1DD6B /* Pods_HRIS.framework */; };
 		DF0027202023F6EF00743715 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00271F2023F6EF00743715 /* DesignableTextField.swift */; };
 		DF0027222023FDF300743715 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0027212023FDF300743715 /* DesignableButton.swift */; };
+		DF46745E2024659E00707EEB /* AttendanceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46745D2024659E00707EEB /* AttendanceListVC.swift */; };
+		DF4674622024692100707EEB /* AttendanceDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4674612024692100707EEB /* AttendanceDetailTVC.swift */; };
 		DF8037622022C9FD0092BA88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037612022C9FD0092BA88 /* AppDelegate.swift */; };
 		DF8037642022C9FD0092BA88 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037632022C9FD0092BA88 /* LoginVC.swift */; };
 		DF8037672022C9FD0092BA88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8037652022C9FD0092BA88 /* Main.storyboard */; };
@@ -18,7 +20,9 @@
 		DF80377A2022CB090092BA88 /* alertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8037792022CB090092BA88 /* alertExtension.swift */; };
 		DF80377D2022F0040092BA88 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF80377C2022F0040092BA88 /* MainMenuVC.swift */; };
 		DF80377F202304700092BA88 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF80377E202304700092BA88 /* Coordinate.swift */; };
-		DF803781202304820092BA88 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF803780202304820092BA88 /* User.swift */; };
+		DF803781202304820092BA88 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF803780202304820092BA88 /* Employee.swift */; };
+		DF931F7220271DBB00182C0C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF931F7120271DBB00182C0C /* LocationManager.swift */; };
+		DFBDFDD02027F01A001CAD73 /* NavigationBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBDFDCF2027F01A001CAD73 /* NavigationBarVC.swift */; };
 		DFFF76F62023107D005B7BCA /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF76F52023107D005B7BCA /* NetworkingService.swift */; };
 		DFFF76F82023110A005B7BCA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF76F72023110A005B7BCA /* Endpoint.swift */; };
 		DFFF76FA20231256005B7BCA /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF76F920231256005B7BCA /* APIResult.swift */; };
@@ -30,6 +34,8 @@
 		D95DF6A88D23E81163F1DD6B /* Pods_HRIS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HRIS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF00271F2023F6EF00743715 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		DF0027212023FDF300743715 /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		DF46745D2024659E00707EEB /* AttendanceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceListVC.swift; sourceTree = "<group>"; };
+		DF4674612024692100707EEB /* AttendanceDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceDetailTVC.swift; sourceTree = "<group>"; };
 		DF80375E2022C9FD0092BA88 /* HRIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRIS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8037612022C9FD0092BA88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF8037632022C9FD0092BA88 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -40,7 +46,9 @@
 		DF8037792022CB090092BA88 /* alertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertExtension.swift; sourceTree = "<group>"; };
 		DF80377C2022F0040092BA88 /* MainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		DF80377E202304700092BA88 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
-		DF803780202304820092BA88 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DF803780202304820092BA88 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		DF931F7120271DBB00182C0C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		DFBDFDCF2027F01A001CAD73 /* NavigationBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarVC.swift; sourceTree = "<group>"; };
 		DFFF76F52023107D005B7BCA /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		DFFF76F72023110A005B7BCA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		DFFF76F920231256005B7BCA /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
@@ -75,6 +83,15 @@
 				D95DF6A88D23E81163F1DD6B /* Pods_HRIS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF46745C2024656400707EEB /* Attendance List */ = {
+			isa = PBXGroup;
+			children = (
+				DF46745D2024659E00707EEB /* AttendanceListVC.swift */,
+				DF4674612024692100707EEB /* AttendanceDetailTVC.swift */,
+			);
+			path = "Attendance List";
 			sourceTree = "<group>";
 		};
 		DF8037552022C9FD0092BA88 = {
@@ -123,6 +140,8 @@
 				DF8037612022C9FD0092BA88 /* AppDelegate.swift */,
 				DF8037782022CA8E0092BA88 /* Authentication */,
 				DF80377B2022EFDC0092BA88 /* Main Menu */,
+				DF9CC1102027C9E00039F0C7 /* Checkin */,
+				DF46745C2024656400707EEB /* Attendance List */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,9 +162,10 @@
 				DFFF76F52023107D005B7BCA /* NetworkingService.swift */,
 				DFFF76F72023110A005B7BCA /* Endpoint.swift */,
 				DFFF76F920231256005B7BCA /* APIResult.swift */,
-				DF803780202304820092BA88 /* User.swift */,
+				DF803780202304820092BA88 /* Employee.swift */,
 				DFFF76FB20231808005B7BCA /* CheckIn.swift */,
 				DF80377E202304700092BA88 /* Coordinate.swift */,
+				DF931F7120271DBB00182C0C /* LocationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,8 +182,16 @@
 			isa = PBXGroup;
 			children = (
 				DF80377C2022F0040092BA88 /* MainMenuVC.swift */,
+				DFBDFDCF2027F01A001CAD73 /* NavigationBarVC.swift */,
 			);
 			path = "Main Menu";
+			sourceTree = "<group>";
+		};
+		DF9CC1102027C9E00039F0C7 /* Checkin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Checkin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,15 +327,19 @@
 			files = (
 				DFFF76FA20231256005B7BCA /* APIResult.swift in Sources */,
 				DFFF76FC20231808005B7BCA /* CheckIn.swift in Sources */,
+				DF931F7220271DBB00182C0C /* LocationManager.swift in Sources */,
 				DF8037642022C9FD0092BA88 /* LoginVC.swift in Sources */,
 				DF80377A2022CB090092BA88 /* alertExtension.swift in Sources */,
 				DF0027202023F6EF00743715 /* DesignableTextField.swift in Sources */,
 				DFFF76F82023110A005B7BCA /* Endpoint.swift in Sources */,
-				DF803781202304820092BA88 /* User.swift in Sources */,
+				DF46745E2024659E00707EEB /* AttendanceListVC.swift in Sources */,
+				DF4674622024692100707EEB /* AttendanceDetailTVC.swift in Sources */,
+				DF803781202304820092BA88 /* Employee.swift in Sources */,
 				DF80377D2022F0040092BA88 /* MainMenuVC.swift in Sources */,
 				DF8037622022C9FD0092BA88 /* AppDelegate.swift in Sources */,
 				DFFF76F62023107D005B7BCA /* NetworkingService.swift in Sources */,
 				DF80377F202304700092BA88 /* Coordinate.swift in Sources */,
+				DFBDFDD02027F01A001CAD73 /* NavigationBarVC.swift in Sources */,
 				DF0027222023FDF300743715 /* DesignableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

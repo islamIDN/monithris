@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 
 class LoginVC: UIViewController {
-    
     
 
     @IBOutlet weak var usernameTextField: UITextField!
@@ -21,6 +21,8 @@ class LoginVC: UIViewController {
     var usernameOfUser : String?
     var registrationID : String?
     var hasBeenLoggedIn = false
+    
+    
     
     
     override func viewDidLoad() {
@@ -38,14 +40,19 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginButtonDidPressed(_ sender: Any) {
+  
+        
+        // TODO: - Generate FCM Token as registrationID
+        registrationID = "123" // this shall be generated from FCM
+        guard let regID = registrationID else {return}
         
         
-        let dummyRegID = "123"
+        
         
         self.activityIndicator.startAnimating()
         
-        // send data to the server
-        let loginEndPoint = EndPoint.login(loginUser: usernameTextField.text!, password: passwordTextField.text!, registrationID: dummyRegID)
+        // send request to the server
+        let loginEndPoint = EndPoint.login(loginUser: usernameTextField.text!, password: passwordTextField.text!, registrationID: regID)
         NetworkingService.fetchJSONData(endPoint: loginEndPoint) { (result) in
             
             
@@ -54,43 +61,33 @@ class LoginVC: UIViewController {
             case .failure(let error) :
                 self.activityIndicator.stopAnimating()
                 self.showAlert(alertTitle: "Sorry", alertMessage: error.localizedDescription, actionTitle: "Back")
-            case .success(let result) :
+            case .success(let jsonFromServer) :
                 
-                // the result from the server can be user data (dictionary) if login is successful or just a message from the server (string)
-                print("j")
-
-                guard let dataOfUser = result as? [String:Any] else {
-                    print("k")
-
-                    guard let messageFromServer = result as? String else {return}
-                    print("l")
+                let json = jsonFromServer as! JSON
+                let validity = json["valid"].intValue
+                
+                
+                if validity == 0 {
+                    guard let messageFromServer = json["message"].string else {return}
                     self.activityIndicator.stopAnimating()
                     self.showAlert(alertTitle: "Sorry", alertMessage: messageFromServer, actionTitle: "Back")
-                    return
+                } else {
+                    
+                    guard let dataOfEmployee = json["data"].dictionaryObject else {return}
+                    
+                    // create Employee Object
+                    employee = Employee(dictionary: dataOfEmployee)
+         
+                    self.saveDataUserUsingUserDefault()
+                    self.activityIndicator.stopAnimating()
+                    self.performSegue(withIdentifier: "goToMainMenu", sender: self)
                 }
-                
-                print(dataOfUser)
-                
-                
-                /*
-                // save user data persistence using user default
-                var userData : [String:Any] = [
-                    "username" : self.usernameTextField.text!,
-                    "hasBeenLoggedIn" : true,
-                    "registrationID" : self.registrationID!
-                ]
-                
-                UserDefaults.standard.set(userData, forKey: "userData")
-                userData = UserDefaults.standard.object(forKey: "userData") as! [String:Any]
-                */
- 
- 
-                self.activityIndicator.stopAnimating()
-                self.performSegue(withIdentifier: "goToMainMenu", sender: self)
-                
+         
             }
             
         }
+        
+        
         
     }
     
@@ -98,6 +95,12 @@ class LoginVC: UIViewController {
     
 
 }
+
+
+
+
+
+
 
 
 extension LoginVC {
@@ -111,7 +114,6 @@ extension LoginVC {
         if let userInformation = userData {
             usernameOfUser = userInformation["username"] as? String
             hasBeenLoggedIn = userInformation["hasBeenLoggedIn"] as! Bool
-            registrationID = userInformation["registrationID"] as? String
         } else {
             print("user data in User Default is not available i.e user first time login")
         }
@@ -122,9 +124,23 @@ extension LoginVC {
     func fillTextField() {
         guard let username = usernameOfUser else {return}
         usernameTextField.text = username
-        
-        // password textfield will be filled manually by the user
     }
+    
+    
+    func saveDataUserUsingUserDefault() {
+        // save data persistence using user default
+        let dataOfUser : [String:Any] = [
+            "username" : self.usernameTextField.text!,
+            "password" : self.passwordTextField.text!,
+            "registrationID" : self.registrationID!,
+            "hasBeenLoggedIn" : true
+        ]
+        
+        UserDefaults.standard.set(dataOfUser, forKey: "userData")
+        userData = UserDefaults.standard.object(forKey: "userData") as? [String:Any]
+    }
+    
+    
     
     func addFunctionalityToTextField() {
         
@@ -203,14 +219,4 @@ extension LoginVC {
 
 
 
-
-extension LoginVC {
-    
-    // to make light color status bar
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
-    }
-    
-    
-}
 
